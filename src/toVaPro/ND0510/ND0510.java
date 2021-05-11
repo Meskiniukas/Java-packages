@@ -30,7 +30,7 @@ public class ND0510 {
         if (fields.length > 0) {
             System.out.println("\nDeclared fields:");
             
-            for(Field field : fields) {
+            for (Field field : fields) {
                 System.out.println(field.getName());
             }
             
