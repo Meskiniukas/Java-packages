@@ -29,18 +29,30 @@ public class ND0510 {
 
         if (fields.length > 0) {
             System.out.println("\nDeclared fields:");
-            for (int i = 0; i < fields.length; i++) {
-                System.out.println(fields[i].getName());
+            
+            for(Field field : fields) {
+                System.out.println(field.getName());
             }
+            
+//            for (int i = 0; i < fields.length; i++) {
+//                System.out.println(fields[i].getName());
+//            }
+            
         }
 
         Method[] methods = c.getDeclaredMethods();
 
         if (methods.length > 0) {
             System.out.println("\nDeclared methods:");
-            for (int i = 0; i < methods.length; i++) {
-                System.out.println(methods[i].getName());
+            
+            for (Method method : methods) {
+                System.out.println(method.getName());
             }
+            
+//            for (int i = 0; i < methods.length; i++) {
+//                System.out.println(methods[i].getName());
+//            }
+        
         }
 
         Class superclass = c.getSuperclass();
