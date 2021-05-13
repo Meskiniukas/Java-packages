@@ -37,21 +37,23 @@ public class MyList {
         int j = 0;
         for (int i = 0; i < this.list.length; i++) {
             if (i != index) {
-                newList[j] = this.list[i];
-                j++;
+                newList[j++] = this.list[i];
             }
         }
         this.list = newList;
     }
 
     public Object get(int index) {
-        if (index < 0 || index > this.list.length - 1) {
+        if (index < 0 || index >= this.list.length) {
             return null;
         }
         return this.list[index];
     }
 
     public void set(int index, Object o) {
+        if (index < 0 || index >= this.list.length) {
+            return;
+        }
         this.list[index] = o;
     }
 
@@ -61,8 +63,7 @@ public class MyList {
         }
         // jei index < 0 arba didesnis arba lygus uz esama saraso ilgi - nedaro nieko
         Object[] newList = new Object[this.list.length + 1];
-        int j = 0;
-        for (int i = 0; i < list.length; i++) {
+        for (int i = 0, j = 0; i < list.length; i++) {
             if (i == index) {
                 newList[j++] = o;
             }
