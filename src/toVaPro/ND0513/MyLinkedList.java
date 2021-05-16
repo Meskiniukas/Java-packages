@@ -30,8 +30,8 @@ public class MyLinkedList {
             this.head = this.head.next;
         } else {
             Node temp = this.head, prev = null;
-            int i = 1;
-            while (temp != null && i != index + 1) {
+            int i = 0;
+            while (temp != null && i != index) {
                 prev = temp;
                 temp = temp.next;
                 i++;
