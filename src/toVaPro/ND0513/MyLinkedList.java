@@ -26,6 +26,10 @@ public class MyLinkedList {
 
     public void remove(int index) {
 
+        if (index < 0 || index >= this.size()) {
+            throw new NecheckedKlaida("Netinkama reikšmė. remove index = " + index);
+        }
+
         if (index == 0) {
             this.head = this.head.next;
         } else {
@@ -40,9 +44,13 @@ public class MyLinkedList {
             }
         }
     }
-    //    --> PARTIALLY DONE
+//    DONE
 
     public Object get(int index) {
+
+        if (index < 0 || index >= this.size()) {
+            throw new NecheckedKlaida("Netinkama reikšmė. get index = " + index);
+        }
 
         int i = 0;
         Node current = this.head;
@@ -54,9 +62,13 @@ public class MyLinkedList {
         }
         return null;
     }
-//    --> PARTIALLY DONE
+//    DONE
 
     public void set(int index, Object o) {
+
+        if (index < 0 || index >= this.size()) {
+            throw new NecheckedKlaida("Netinkama reikšmė. set index = " + index);
+        }
 
         int i = 0;
         Node current = this.head;
@@ -67,9 +79,13 @@ public class MyLinkedList {
             current = current.next;
         }
     }
-//    --> PARTIALLY DONE
+//    DONE
 
     public void insert(int index, Object o) {
+
+        if (index < 0 || index >= this.size()) {
+            throw new NecheckedKlaida("Netinkama reikšmė. insert index = " + index);
+        }
 
         Node current = this.head;
         if (index == 0) {
@@ -88,7 +104,7 @@ public class MyLinkedList {
             }
         }
     }
-//    --> PARTIALLY DONE
+//    DONE
 
     public int size() {
         int size = 0;
@@ -115,6 +131,7 @@ public class MyLinkedList {
         ret += "}";
         return ret;
     }
+//    DONE
 
     private class Node {
 

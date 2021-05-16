@@ -7,13 +7,13 @@ package toVaPro.ND0513;
 public class ND0513_Sarasai {
 
     public static void main(String[] args) {
-        
+
         MyLinkedList ml = new MyLinkedList();
         System.out.println(ml.toString());
         // {}
         System.out.println(ml.size());
         // 0
-        
+
         ml.add("pirmas");
         System.out.println(ml.toString());
         // {pirmas}
@@ -31,7 +31,7 @@ public class ND0513_Sarasai {
         // {pirmas, antras, trecias}
         System.out.println(ml.size());
         // 3
-        
+
 //        ml.add("ketvirtas");
 //        System.out.println(ml.toString());
 //        // {pirmas, antras, trecias, ketvirtas}
@@ -61,17 +61,44 @@ public class ND0513_Sarasai {
 //        // {pirmas, antras, trecias, ketvirtas, penktas, šeštas, septintas, aštuntas}
 //        System.out.println(ml.size());
 //        // 8
-        
-         System.out.println(ml.get(0));
-        // pirmas
-        System.out.println(ml.get(2));
-        // trecias
-        System.out.println(ml.get(-3));
-        // null
-        System.out.println(ml.get(3));
-        // null
-        
-        ml.set(1, "kitas antras");
+        int getIndex = 0;
+        try {
+            System.out.println(ml.get(getIndex));
+            // pirmas
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
+
+        getIndex = 2;
+        try {
+            System.out.println(ml.get(getIndex));
+            // trečias
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
+
+        getIndex = -3;
+        try {
+            System.out.println(ml.get(getIndex));
+            // null
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
+
+        getIndex = 3;
+        try {
+            System.out.println(ml.get(getIndex));
+            // null
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
+
+        int setIndex = 1;
+        try {
+            ml.set(setIndex, "kitas antras");
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
         System.out.println(ml.toString());
         // {pirmas, kitas antras, trecias}
         System.out.println(ml.size());
@@ -79,8 +106,13 @@ public class ND0513_Sarasai {
         System.out.println(ml.get(1));
         System.out.println("******** ******** ******** ********");
         // kitas antras
-        
-        ml.remove(1);
+
+        int remIndex = 1;
+        try {
+            ml.remove(remIndex);
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
         System.out.println(ml.toString());
         // {pirmas, trecias}
         System.out.println(ml.size());
@@ -88,8 +120,13 @@ public class ND0513_Sarasai {
         System.out.println(ml.get(1));
         System.out.println("******** ******** ******** ********");
         // trecias
-        
-        ml.insert(0, "nulis");
+
+        int insIndex = 0;
+        try {
+            ml.insert(insIndex, "nulis");
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
         System.out.println(ml.toString());
         // {nulis, pirmas, trecias}
         System.out.println(ml.size());
@@ -97,15 +134,25 @@ public class ND0513_Sarasai {
         System.out.println(ml.get(0));
         // nulis
 
-        ml.insert(2, "pries trecia");
+        insIndex = 2;
+        try {
+            ml.insert(insIndex, "pries trecia");
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
         System.out.println(ml.toString());
         // {nulis, pirmas, pries trecia, trecias}
         System.out.println(ml.size());
         // 4
-        System.out.println(ml.get(2));
+        getIndex = 2;
+        try {
+            System.out.println(ml.get(2));
+        } catch (NecheckedKlaida kl) {
+            System.out.println("KLAIDA !  " + kl);
+        }
         // pries trecia
     }
-    
+
 }
 /*
 Sukurti klase
@@ -127,5 +174,4 @@ String toString();
 void insert(int index, Object o);
 
 
-*/
-
+ */
