@@ -105,14 +105,16 @@ public class MyLinkedList {
         String ret = "{";
         Node n = this.head;
         while (n != null) {
-            ret += n.value + ", ";
+            if (n.next == null) {
+                ret += n.value;
+            } else {
+                ret += n.value + ", ";
+            }
             n = n.next;
         }
         ret += "}";
         return ret;
-
     }
-//    --> PARTIALLY DONE
 
     private class Node {
 
