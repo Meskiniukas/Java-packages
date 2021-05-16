@@ -4,11 +4,11 @@ package toVaPro.ND0513;
  *
  * @author tomas
  */
-public class MyLinkedList {
+public class MyLinkedListNesekmes {
 
     private Node head;
 
-    public MyLinkedList() {
+    public MyLinkedListNesekmes() {
         this.head = null;
     }
 
@@ -29,15 +29,31 @@ public class MyLinkedList {
         if (index == 0) {
             this.head = this.head.next;
         } else {
-            Node temp = this.head, prev = null;
             int i = 1;
-            while (temp != null && i != index + 1) {
-                prev = temp;
-                temp = temp.next;
+            Node current = this.head.next;
+            while (current != null) {
+                if (i == index) {
+//                    current.value = i < this.size() - 1 ? current.next.value : current.value;
+
+                    for (int j = i; j < this.size(); j++) {
+                        if (current.next != null) {
+                            current.value = current.next.value;
+                            current = current.next;
+                        } else {
+                            System.out.println("i = " + i + "; current.value = " + current.value);
+                            current.value = null;
+                            current = null;
+                            System.out.println("i = " + i + "; current = " + current);
+                        }
+                    }
+                    continue;
+                }
+                current = current.next;
+                
+//                if (this.head.next != null) {
+//                    this.head = this.head.next;
+//                }
                 i++;
-            }
-            if (temp != null) {
-                prev.next = temp.next;
             }
         }
     }

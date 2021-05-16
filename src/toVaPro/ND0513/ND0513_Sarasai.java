@@ -32,7 +32,37 @@ public class ND0513_Sarasai {
         System.out.println(ml.size());
         // 3
         
-        System.out.println(ml.get(0));
+//        ml.add("ketvirtas");
+//        System.out.println(ml.toString());
+//        // {pirmas, antras, trecias, ketvirtas}
+//        System.out.println(ml.size());
+//        // 4
+//        
+//        ml.add("penktas");
+//        System.out.println(ml.toString());
+//        // {pirmas, antras, trecias, ketvirtas, penktas}
+//        System.out.println(ml.size());
+//        // 5
+//        
+//        ml.add("šeštas");
+//        System.out.println(ml.toString());
+//        // {pirmas, antras, trecias, ketvirtas, penktas, šeštas}
+//        System.out.println(ml.size());
+//        // 6
+//        
+//        ml.add("septintas");
+//        System.out.println(ml.toString());
+//        // {pirmas, antras, trecias, ketvirtas, penktas, šeštas, septintas}
+//        System.out.println(ml.size());
+//        // 7
+//        
+//        ml.add("aštuntas");
+//        System.out.println(ml.toString());
+//        // {pirmas, antras, trecias, ketvirtas, penktas, šeštas, septintas, aštuntas}
+//        System.out.println(ml.size());
+//        // 8
+        
+         System.out.println(ml.get(0));
         // pirmas
         System.out.println(ml.get(2));
         // trecias
