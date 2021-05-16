@@ -4,11 +4,11 @@ package toVaPro.ND0513;
  *
  * @author tomas
  */
-public class MyLinkedList {
+public class MyLinkedListNesekmesVel_2 {
 
     private Node head;
 
-    public MyLinkedList() {
+    public MyLinkedListNesekmesVel_2() {
         this.head = null;
     }
 
@@ -31,9 +31,10 @@ public class MyLinkedList {
         } else {
             Node temp = this.head, prev = null;
             int i = 0;
-            while (temp != null && i++ != index) {
+            while (temp != null && i != index) {
                 prev = temp;
                 temp = temp.next;
+                i++;
             }
             if (temp != null) {
                 prev.next = temp.next;
@@ -47,10 +48,11 @@ public class MyLinkedList {
         int i = 0;
         Node current = this.head;
         while (current != null) {
-            if (i++ == index) {
+            if (i == index) {
                 return current.value;
             }
             current = current.next;
+            i++;
         }
         return null;
     }
@@ -61,34 +63,52 @@ public class MyLinkedList {
         int i = 0;
         Node current = this.head;
         while (current != null) {
-            if (i++ == index) {
+            if (i == index) {
                 current.value = o;
             }
             current = current.next;
+            i++;
         }
     }
 //    --> PARTIALLY DONE
 
     public void insert(int index, Object o) {
 
-        Node current = this.head;
         if (index == 0) {
             Node newNode = new Node(o);
             newNode.next = this.head;
             this.head = newNode;
         } else {
-            while (index-- != 0) {
-                if (index == 0) {
-                    Node newNode = new Node(o);
-                    newNode.next = current.next;
-                    current.next = newNode;
-                    break;
-                }
-                current = current.next;
-            }
+            int i = 0;
+            Node newNode = new Node(o);
+           
+//            while (i != index) {
+                
+                System.out.println("newNode.value: " + newNode.value);
+
+
+                Node prev = this.head;
+                Node temp = this.head.next;
+                
+                System.out.println("prev.value: " + prev.value);
+                System.out.println("prev.next.value: " + prev.next.value);
+                
+//                prev.next = temp.next;
+//                temp.next = newNode;
+                
+                
+
+                /* 4. Make next of new Node as next of prev_node */
+                newNode.next = prev.next;
+
+                /* 5. make next of prev_node as new_node */
+                prev.next = newNode;
+                
+           
+            i++;
+//            }
         }
     }
-//    --> PARTIALLY DONE
 
     public int size() {
         int size = 0;
@@ -110,7 +130,6 @@ public class MyLinkedList {
         }
         ret += "}";
         return ret;
-
     }
 //    --> PARTIALLY DONE
 

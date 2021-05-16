@@ -4,11 +4,11 @@ package toVaPro.ND0513;
  *
  * @author tomas
  */
-public class MyLinkedList {
+public class MyLinkedListNesekmesVel {
 
     private Node head;
 
-    public MyLinkedList() {
+    public MyLinkedListNesekmesVel() {
         this.head = null;
     }
 
@@ -31,9 +31,10 @@ public class MyLinkedList {
         } else {
             Node temp = this.head, prev = null;
             int i = 0;
-            while (temp != null && i++ != index) {
+            while (temp != null && i != index) {
                 prev = temp;
                 temp = temp.next;
+                i++;
             }
             if (temp != null) {
                 prev.next = temp.next;
@@ -47,10 +48,11 @@ public class MyLinkedList {
         int i = 0;
         Node current = this.head;
         while (current != null) {
-            if (i++ == index) {
+            if (i == index) {
                 return current.value;
             }
             current = current.next;
+            i++;
         }
         return null;
     }
@@ -61,34 +63,32 @@ public class MyLinkedList {
         int i = 0;
         Node current = this.head;
         while (current != null) {
-            if (i++ == index) {
+            if (i == index) {
                 current.value = o;
             }
             current = current.next;
+            i++;
         }
     }
 //    --> PARTIALLY DONE
 
     public void insert(int index, Object o) {
 
-        Node current = this.head;
         if (index == 0) {
             Node newNode = new Node(o);
             newNode.next = this.head;
             this.head = newNode;
         } else {
-            while (index-- != 0) {
-                if (index == 0) {
-                    Node newNode = new Node(o);
-                    newNode.next = current.next;
-                    current.next = newNode;
-                    break;
-                }
-                current = current.next;
+            Node temp = this.head, prev;
+            int i = 0;
+            while (temp != null && i != index) {
+                prev = temp;
+                temp = temp.next;
+                i++;
             }
+            temp.next = new Node(o);
         }
     }
-//    --> PARTIALLY DONE
 
     public int size() {
         int size = 0;
@@ -110,7 +110,6 @@ public class MyLinkedList {
         }
         ret += "}";
         return ret;
-
     }
 //    --> PARTIALLY DONE
 
