@@ -55,7 +55,7 @@ public class ND0518 {
         System.out.println(new Date());
         List l = new ArrayList();
         int count = (int) (Math.random() * 100 + 1);
-//        count = 100000000;
+//        count = 100000000; // Count 100.000.000 Execute Time: 2 sec. (ArrayList); || count 100.000 Execute Time: 8 sec. (LinkedList).
         fill(l, count);
         for (int i = 0; i < l.size(); i++) {
             System.out.println(l.get(i));
