@@ -1,6 +1,8 @@
 package toVaPro.ND0518;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -31,7 +33,7 @@ public class ND0518 {
     public static double max(List l) {
         
         int max = (int) l.get(0);
-        for (int i = 0; i < l.size(); i++) {
+        for (int i = 1; i < l.size(); i++) {
             max = (int) l.get(i) > max ? (int) l.get(i) : max;
         }
         return max;
@@ -41,7 +43,7 @@ public class ND0518 {
     public static double min(List l) {
         
         int min = (int) l.get(0);
-        for (int i = 0; i < l.size(); i++) {
+        for (int i = 1; i < l.size(); i++) {
             min = (int) l.get(i) < min ? (int) l.get(i) : min;
         }
         return min;
@@ -50,8 +52,10 @@ public class ND0518 {
 
     public static void main(String[] args) {
 
+        System.out.println(new Date());
         List l = new ArrayList();
         int count = (int) (Math.random() * 100 + 1);
+//        count = 100000000;
         fill(l, count);
         for (int i = 0; i < l.size(); i++) {
             System.out.println(l.get(i));
@@ -59,6 +63,7 @@ public class ND0518 {
         fill(l);
         System.out.println("MAX of list: " + max(l));
         System.out.println("MIN of list: " + min(l));
+        System.out.println(new Date());
     }
 
 }
