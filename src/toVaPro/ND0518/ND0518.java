@@ -57,8 +57,8 @@ public class ND0518 {
             System.out.println(l.get(i));
         }
         fill(l);
-        System.out.println("Didžiausias: " + max(l));
-        System.out.println("Mažiausias: " + min(l));
+        System.out.println("MAX of list: " + max(l));
+        System.out.println("MIN of list: " + min(l));
     }
 
 }
