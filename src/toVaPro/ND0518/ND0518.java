@@ -18,7 +18,7 @@ public class ND0518 {
         }
     }
 
-    public static double fill(List l) {
+    public static double average(List l) {
 
         int sum = 0;
         double average;
@@ -60,7 +60,7 @@ public class ND0518 {
         for (int i = 0; i < l.size(); i++) {
             System.out.println(l.get(i));
         }
-        fill(l);
+        average(l);
         System.out.println("MAX of list: " + max(l));
         System.out.println("MIN of list: " + min(l));
         System.out.println(new Date());
