@@ -13,6 +13,13 @@ public class ND0520_BeforeEndTemplate {
         
         
         String[] zodziai = {"labas", "pasauli", "kaip", "sekasi", "pasauli", "labas", "dar", "karta", "viso", "gero", "pasauli"};
+        for (int i = 0; i < zodziai.length; i++) {
+            if (i != zodziai.length - 1) {
+            System.out.print(zodziai[i] + ", ");
+            } else {
+                System.out.print(zodziai[i] + ".\n\n");
+            }
+        }
 
         int[] repeatcount = new int[zodziai.length];
         for (int i = 0; i < repeatcount.length; i++) {
@@ -39,9 +46,9 @@ public class ND0520_BeforeEndTemplate {
             }
         }
 
-//        for (int i = 0; i < repeatcount.length; i++) {
-//            System.out.print(repeatcount[i] + " ");
-//        }
+        for (int i = 0; i < repeatcount.length; i++) {
+            System.out.print(repeatcount[i] + " ");
+        }
         System.out.println(m1 + "\n");
 
         for (int i = 0; i < zodziai.length; i++) {
