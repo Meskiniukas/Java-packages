@@ -12,7 +12,14 @@ public class ND0520_Maps {
     public static void main(String[] args) {
 
         String[] zodziai = {"labas", "pasauli", "kaip", "tau", "sekasi", "pasauli", "labas", "dar", "karta", "viso", "gero", "pasauli"};
-
+        for (int i = 0; i < zodziai.length; i++) {
+            if (i != zodziai.length - 1) {
+            System.out.print(zodziai[i] + ", ");
+            } else {
+                System.out.print(zodziai[i] + ".\n\n");
+            }
+        }
+        
         int[] repeatcount = new int[zodziai.length];
         for (int i = 0; i < repeatcount.length; i++) {
             repeatcount[i] = 1;
@@ -68,7 +75,7 @@ public class ND0520_Maps {
                 }
             }
         }
-        System.out.println("\n" + m2);
+        System.out.println(m2 + "\n");
     }
 }
 
