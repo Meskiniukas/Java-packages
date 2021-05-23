@@ -52,6 +52,7 @@ public class Maps_Experiments {
         System.out.println(mex);
 
         list.clear();
+        System.out.println("\n" + mex);
 //        list = new ArrayList();
 
         list.add("pasauli1");
