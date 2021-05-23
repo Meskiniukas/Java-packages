@@ -21,13 +21,11 @@ public class ND0520_Maps {
             }
         }
 
-        int count, length;
-
         Map m1 = new HashMap();
         Map m2 = new HashMap();
 
         for (String s1 : zodziai) {
-            count = 0;
+            int count = 0;
             for (String s2 : zodziai) {
                 count = s1.equals(s2) ? count + 1 : count;
             }
@@ -36,7 +34,7 @@ public class ND0520_Maps {
 
         for (String s1 : zodziai) {
             ArrayList sameLenght = new ArrayList();
-            length = s1.length();
+            int length = s1.length();
             for (String s2 : zodziai) {
                 if (length == s2.length()) {
                     sameLenght.add(s2);
