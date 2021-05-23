@@ -34,13 +34,12 @@ public class ND0520_Maps {
 
         for (String s1 : zodziai) {
             ArrayList sameLenght = new ArrayList();
-            int length = s1.length();
             for (String s2 : zodziai) {
-                if (length == s2.length()) {
+                if (s1.length() == s2.length()) {
                     sameLenght.add(s2);
                 }
             }
-            m2.put(length, sameLenght);
+            m2.put(s1.length(), sameLenght);
         }
 
         System.out.println(m1 + "\n");
