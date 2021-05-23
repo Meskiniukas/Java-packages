@@ -44,9 +44,9 @@ public class Maps_Experiments {
         List list = new ArrayList();
         Map mex = new HashMap();
 
-        list.add("labas");
-        list.add("labas");
-        list.add("labas");
+        list.add("labas1");
+        list.add("labas2");
+        list.add("labas3");
         
         mex.put(5, list);
         System.out.println(mex);
@@ -54,10 +54,10 @@ public class Maps_Experiments {
         list.clear();
 //        list = new ArrayList();
 
-        list.add("pasauli");
-        list.add("pasauli");
-        list.add("pasauli");
+        list.add("pasauli1");
+        list.add("pasauli2");
+        list.add("pasauli3");
         mex.put(7, list);
-        System.out.println(mex);
+        System.out.println("\n" + mex);
     }
 }
